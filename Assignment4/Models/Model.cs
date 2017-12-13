@@ -24,7 +24,7 @@ namespace Assignment4.Models
         public Specialability[] specialAbilities { get; set; }
         public string imageUrl { get; set; }
 
-
+    }
         public class Action
         {
             public string name { get; set; }
@@ -40,5 +40,5 @@ namespace Assignment4.Models
             public string description { get; set; }
         }
 
-    }
+    
 }
