@@ -231,6 +231,9 @@
         </table>
           </ItemTemplate>
             </asp:Repeater>  
+    <asp:Button ID="Update" runat="server" OnClick="Update_Click" Text="Update"  />
+
+        <asp:Button ID="Save"  runat="server" OnClick="Save_Click" Text="Save"  Visible="false" ValidationGroup="Update"/>
 
     
 

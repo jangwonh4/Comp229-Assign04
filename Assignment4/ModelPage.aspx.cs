@@ -54,6 +54,41 @@ namespace Assignment4
 
             action.DataSource = _Model.actions;
             action.DataBind();
-        }    
+        }
+
+        protected void Update_Click(object sender, EventArgs e)
+        {
+            Save.Visible = true;
+            Update.Visible = false;
+            txtName.Enabled = true;
+            txtFaction.Enabled = true;
+            txtRank.Enabled = true;
+            txtBase.Enabled = true;
+            txtSize.Enabled = true;
+            
+        }
+
+
+        private void UpdateAllModels()
+        {
+            _Model.name = txtName.Text;
+            _Model.rank = int.Parse(txtRank.Text);
+            _Model.faction = txtFaction.Text;
+            _Model._base = int.Parse(txtBase.Text);
+            _Model.size = int.Parse(txtSize.Text);
+        }
+        protected void Save_Click(object sender, EventArgs e)
+        {
+            Save.Visible = false;
+            Update.Visible = true;
+            txtName.Enabled = false;
+            txtFaction.Enabled = false;
+            txtRank.Enabled = false;
+            txtBase.Enabled = false;
+            txtSize.Enabled = false;
+
+            Global.UpdateNewJsonFile();
+            UpdateAllModels();
+        }
     }
 }
