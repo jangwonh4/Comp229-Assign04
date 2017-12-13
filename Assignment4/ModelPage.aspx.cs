@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Assignment4.Models;
+using System.IO;
+using Newtonsoft.Json;
+using System.Net.Mail;
 
 namespace Assignment4
 {
@@ -13,59 +16,44 @@ namespace Assignment4
         private Model _Model;
         protected void Page_Load(object sender, EventArgs e)
         {
+            var Name = Request.QueryString["name"];
+            var Faction = Request.QueryString["faction"];
 
-            var name = Request.QueryString["name"];
-            var faction = Request.QueryString["faction"];
-
-            UpdateModel.NavigateUrl = String.Format("~/UpdateModel.aspx?name={0}", name);
-
-
-            if (string.IsNullOrEmpty(name))
+            if (string.IsNullOrEmpty(Name))
             {
-                Response.Redirect("~/Default.aspx");
-                return;
+                Response.Redirect("~/Default.aspx");               
             }
-            _Model = Global.Models.FirstOrDefault(tModel => tModel.name == name);
-            SetBindings();
+            _Model = Global.Models.FirstOrDefault(tModel => tModel.name == Name && tModel.faction == Faction);
+            Bind();
+
         }
 
-        private void SetBindings()
+        private void Bind()
         {
-            //Values
             ImageGame.ImageUrl = _Model.imageUrl;
 
-            LblNameValue.Text = _Model.name;
-            LblFactionValue.Text = _Model.faction;
-            LblRankValue.Text = _Model.rank.ToString();
-            LblBaseValue.Text = _Model._base.ToString();
-            LblSizeValue.Text = _Model.size.ToString();
-            LblDeploymentZoneValue.Text = _Model.deploymentZone.ToString();
+            txtName.Text = _Model.name;
+            txtFaction.Text = _Model.faction;
+            txtRank.Text = _Model.rank.ToString();
+            txtBase.Text = _Model._base.ToString();
+            txtSize.Text = _Model.size.ToString();
+            txtDeploymentZone.Text = _Model.deploymentZone;
+            txtMobility.Text = _Model.mobility.ToString();
+            txtWillpower.Text = _Model.willpower.ToString();
+            txtResiliance.Text = _Model.resiliance.ToString();
+            txtWounds.Text = _Model.wounds.ToString();
 
-            rptTraits.DataSource = _Model.traits;
-            rptTraits.DataBind();
+            traits.DataSource = _Model.traits;
+            traits.DataBind();
 
-            rptTypes.DataSource = _Model.types;
-            rptTypes.DataBind();
+            types.DataSource = _Model.types;
+            types.DataBind();
 
-            rptDefenseChart.DataSource = _Model.defenseChart;
-            rptDefenseChart.DataBind();
+            defense.DataSource = _Model.defenseChart;
+            defense.DataBind();
 
-            LblMobilityValue.Text = _Model.mobility.ToString();
-            LblWillPowerValue.Text = _Model.willpower.ToString();
-            LblResilianceValue.Text = _Model.resiliance.ToString();
-            LblWoundsValue.Text = _Model.wounds.ToString();
-
-            rptActions.DataSource = _Model.actions;
-            rptActions.DataBind();
-
-            rptSpecialAbilities.DataSource = _Model.specialAbilities;
-            rptSpecialAbilities.DataBind();
-
-           
-            
-            
-
-
-        }
+            action.DataSource = _Model.actions;
+            action.DataBind();
+        }    
     }
 }

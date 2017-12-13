@@ -22,237 +22,129 @@ namespace Assignment4 {
         protected global::System.Web.UI.WebControls.Image ImageGame;
         
         /// <summary>
-        /// LblName control.
+        /// txtName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblName;
+        protected global::System.Web.UI.WebControls.TextBox txtName;
         
         /// <summary>
-        /// LblNameValue control.
+        /// txtFaction control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblNameValue;
+        protected global::System.Web.UI.WebControls.TextBox txtFaction;
         
         /// <summary>
-        /// LblFaction control.
+        /// txtRank control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblFaction;
+        protected global::System.Web.UI.WebControls.TextBox txtRank;
         
         /// <summary>
-        /// LblFactionValue control.
+        /// txtBase control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblFactionValue;
+        protected global::System.Web.UI.WebControls.TextBox txtBase;
         
         /// <summary>
-        /// LblRank control.
+        /// txtSize control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblRank;
+        protected global::System.Web.UI.WebControls.TextBox txtSize;
         
         /// <summary>
-        /// LblRankValue control.
+        /// txtDeploymentZone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblRankValue;
+        protected global::System.Web.UI.WebControls.TextBox txtDeploymentZone;
         
         /// <summary>
-        /// LblBase control.
+        /// traits control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblBase;
+        protected global::System.Web.UI.WebControls.Repeater traits;
         
         /// <summary>
-        /// LblBaseValue control.
+        /// types control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblBaseValue;
+        protected global::System.Web.UI.WebControls.Repeater types;
         
         /// <summary>
-        /// LblSize control.
+        /// defense control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblSize;
+        protected global::System.Web.UI.WebControls.Repeater defense;
         
         /// <summary>
-        /// LblSizeValue control.
+        /// txtMobility control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblSizeValue;
+        protected global::System.Web.UI.WebControls.TextBox txtMobility;
         
         /// <summary>
-        /// LblDeploymentZone control.
+        /// txtWillpower control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblDeploymentZone;
+        protected global::System.Web.UI.WebControls.TextBox txtWillpower;
         
         /// <summary>
-        /// LblDeploymentZoneValue control.
+        /// txtResiliance control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblDeploymentZoneValue;
+        protected global::System.Web.UI.WebControls.TextBox txtResiliance;
         
         /// <summary>
-        /// rptTraits control.
+        /// txtWounds control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptTraits;
+        protected global::System.Web.UI.WebControls.TextBox txtWounds;
         
         /// <summary>
-        /// rptTypes control.
+        /// action control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptTypes;
-        
-        /// <summary>
-        /// rptDefenseChart control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptDefenseChart;
-        
-        /// <summary>
-        /// LblMobility control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblMobility;
-        
-        /// <summary>
-        /// LblMobilityValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblMobilityValue;
-        
-        /// <summary>
-        /// LblWillPower control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblWillPower;
-        
-        /// <summary>
-        /// LblWillPowerValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblWillPowerValue;
-        
-        /// <summary>
-        /// LblResiliance control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblResiliance;
-        
-        /// <summary>
-        /// LblResilianceValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblResilianceValue;
-        
-        /// <summary>
-        /// LblWounds control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblWounds;
-        
-        /// <summary>
-        /// LblWoundsValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblWoundsValue;
-        
-        /// <summary>
-        /// rptActions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptActions;
-        
-        /// <summary>
-        /// rptSpecialAbilities control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptSpecialAbilities;
-        
-        /// <summary>
-        /// UpdateModel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink UpdateModel;
+        protected global::System.Web.UI.WebControls.Repeater action;
     }
 }
