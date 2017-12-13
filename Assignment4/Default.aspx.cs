@@ -11,7 +11,8 @@ namespace Assignment4
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ModelRepeater.DataSource = Global.Models;
+            ModelRepeater.DataBind();
         }
     }
 }

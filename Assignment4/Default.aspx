@@ -9,5 +9,12 @@
     </div>
 
    -->
-
+    <asp:Repeater ID="ModelRepeater" runat="server">
+        <ItemTemplate>
+                         <asp:Image ID="firstimage" runat="server" Height="200px" Width="250px" ImageUrl='<%# Eval("imageUrl") %>' />
+                        
+                            <asp:HyperLink runat="server" NavigateUrl='<%#String.Format("~/SingleModel.aspx?name={0}&faction={1}",Eval("name"),Eval("faction")) %>'>
+                            <asp:Label ID="firstname" runat="server" Width="240px" Height="35px"><%#Eval("name") %></asp:Label> </asp:HyperLink>           
+                 </ItemTemplate>   
+         </asp:Repeater>
 </asp:Content>
