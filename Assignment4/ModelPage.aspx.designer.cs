@@ -139,15 +139,6 @@ namespace Assignment4 {
         protected global::System.Web.UI.WebControls.TextBox txtWounds;
         
         /// <summary>
-        /// action control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater action;
-        
-        /// <summary>
         /// Update control.
         /// </summary>
         /// <remarks>
@@ -164,5 +155,14 @@ namespace Assignment4 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Save;
+        
+        /// <summary>
+        /// action control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater action;
     }
 }

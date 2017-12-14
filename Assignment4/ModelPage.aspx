@@ -4,12 +4,12 @@
    
         <table class="nav-justified">
             <tr>
-                <td colspan="2">
-                                 <asp:Image ID="ImageGame" runat="server" CssClass="img-thumbnail" Height="250px" Width="250px" />
+                <td colspan="2" class="text-center">
+                                 <asp:Image ID="ImageGame" runat="server" CssClass="img-thumbnail" Height="294px" Width="344px" />
                             </td>
             </tr>
             <tr>
-                <td>
+                <td class="text-right">
                                  <strong>
                                      Name:
                                  </strong> 
@@ -20,7 +20,7 @@
                                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="text-right">
                                 <strong>
                                     Faction: 
                                 </strong>
@@ -30,7 +30,7 @@
                                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="text-right">
                                 <strong>
                                     Rank: 
                                 </strong>
@@ -40,7 +40,7 @@
                                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="text-right">
                                 <strong>
                                     Base:
                                 </strong>
@@ -50,7 +50,7 @@
                             </td>
             </tr>
             <tr>
-                <td>
+                <td class="text-right">
                                 <strong>
                                     Size:
                                 </strong>
@@ -60,7 +60,7 @@
                             </td>
             </tr>
             <tr>
-                <td>
+                <td class="text-right">
                                 <strong>
                                     Deployment Zone:
                                 </strong>
@@ -70,7 +70,7 @@
                             </td>
             </tr>
             <tr>
-                <td>
+                <td class="text-right">
                                 <strong>
                                     Traits :
                                 </strong> 
@@ -84,7 +84,7 @@
                             </td>
             </tr>
             <tr>
-                <td>
+                <td class="text-right">
                                 <strong>
                                     Types : 
                                 </strong>
@@ -98,7 +98,7 @@
                             </td>
             </tr>
             <tr>
-                <td>
+                <td class="text-right">
                                         <strong>
                                             Defense Chart : 
                                         </strong>
@@ -124,7 +124,7 @@
                         </td>
             </tr>
             <tr>
-                            <td>
+                            <td class="text-right">
                                 <strong>
                                     Mobility : 
                                  </strong>
@@ -134,7 +134,7 @@
                             </td>
                         </tr>
             <tr>
-                            <td>
+                            <td class="text-right">
                                 <strong>
                                     Willpower :
                                 </strong>
@@ -144,7 +144,7 @@
                             </td>
                         </tr>
             <tr>
-                            <td>
+                            <td class="text-right">
                                 <strong>
                                     Resiliance :
                                 </strong>
@@ -154,7 +154,7 @@
                             </td>
                         </tr>
             <tr>
-                            <td>
+                            <td class="text-right">
                                 <strong>
                                     Wounds :
                                 </strong>
@@ -163,7 +163,12 @@
                                 <asp:TextBox ID="txtWounds" runat="server" CssClass="table" Width="150px" Enabled="false"/>
                             </td>
                         </tr>
-            </table>
+            <tr>
+                            <td class="text-right">
+                                <asp:Button ID="Update" runat="server" OnClick="Update_Click" Text="Update" />
+                                <asp:Button ID="Save" runat="server" OnClick="Save_Click" Text="Save" ValidationGroup="Update" Visible="false" />
+                            </td>
+                            <td>
     
 
     
@@ -231,9 +236,13 @@
         </table>
           </ItemTemplate>
             </asp:Repeater>  
-    <asp:Button ID="Update" runat="server" OnClick="Update_Click" Text="Update"  />
+                            </td>
+                        </tr>
+            </table>
+    
 
-        <asp:Button ID="Save"  runat="server" OnClick="Save_Click" Text="Save"  Visible="false" ValidationGroup="Update"/>
+    
+    
 
     
 
