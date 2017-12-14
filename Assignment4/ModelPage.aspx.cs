@@ -88,7 +88,12 @@ namespace Assignment4
             txtSize.Enabled = false;
 
             Global.UpdateNewJsonFile();
+            Global.Email();
+                    
             UpdateAllModels();
         }
+
+
+        
     }
 }
