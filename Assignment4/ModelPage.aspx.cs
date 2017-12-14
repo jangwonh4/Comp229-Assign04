@@ -26,6 +26,8 @@ namespace Assignment4
             _Model = Global.Models.FirstOrDefault(tModel => tModel.name == Name && tModel.faction == Faction);
             Bind();
 
+
+
         }
 
         
