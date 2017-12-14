@@ -28,33 +28,7 @@ namespace Assignment4
 
         }
 
-        private void Bind()
-        {
-            ImageGame.ImageUrl = _Model.imageUrl;
-
-            txtName.Text = _Model.name;
-            txtFaction.Text = _Model.faction;
-            txtRank.Text = _Model.rank.ToString();
-            txtBase.Text = _Model._base.ToString();
-            txtSize.Text = _Model.size.ToString();
-            txtDeploymentZone.Text = _Model.deploymentZone;
-            txtMobility.Text = _Model.mobility.ToString();
-            txtWillpower.Text = _Model.willpower.ToString();
-            txtResiliance.Text = _Model.resiliance.ToString();
-            txtWounds.Text = _Model.wounds.ToString();
-
-            traits.DataSource = _Model.traits;
-            traits.DataBind();
-
-            types.DataSource = _Model.types;
-            types.DataBind();
-
-            defense.DataSource = _Model.defenseChart;
-            defense.DataBind();
-
-            action.DataSource = _Model.actions;
-            action.DataBind();
-        }
+        
 
         protected void Update_Click(object sender, EventArgs e)
         {
@@ -92,8 +66,34 @@ namespace Assignment4
                     
             UpdateAllModels();
         }
+        private void Bind()
+        {
+            ImageGame.ImageUrl = _Model.imageUrl;
+
+            txtName.Text = _Model.name;
+            txtFaction.Text = _Model.faction;
+            txtRank.Text = _Model.rank.ToString();
+            txtBase.Text = _Model._base.ToString();
+            txtSize.Text = _Model.size.ToString();
+            txtDeploymentZone.Text = _Model.deploymentZone;
+            txtMobility.Text = _Model.mobility.ToString();
+            txtWillpower.Text = _Model.willpower.ToString();
+            txtResiliance.Text = _Model.resiliance.ToString();
+            txtWounds.Text = _Model.wounds.ToString();
+
+            traits.DataSource = _Model.traits;
+            traits.DataBind();
+
+            types.DataSource = _Model.types;
+            types.DataBind();
+
+            defense.DataSource = _Model.defenseChart;
+            defense.DataBind();
+
+            action.DataSource = _Model.actions;
+            action.DataBind();
+        }
 
 
-        
     }
 }
