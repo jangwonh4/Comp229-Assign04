@@ -86,6 +86,8 @@ namespace Assignment4
             SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com", 587);
             MailMessage message = new MailMessage();
 
+            try
+            { 
             MailAddress fromAddress = new MailAddress("cc-comp229f2016@outlook.com", "Comp229-Assign04");
             MailAddress toAddress = new MailAddress("jangwonh4@gmail.com", "Mingi");
             message.From = fromAddress;
@@ -96,6 +98,11 @@ namespace Assignment4
             smtpClient.Host = "smtp-mail.outlook.com";
             smtpClient.Credentials = new System.Net.NetworkCredential("cc-comp229f2016@outlook.com", "comp229pwd");
             smtpClient.Send(message);
+            }
+            catch (Exception ex)
+            {
+                
+            }
 
         }
 

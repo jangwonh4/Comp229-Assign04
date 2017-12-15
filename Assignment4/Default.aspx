@@ -6,6 +6,8 @@
            ImageUrl="Asset/Brandlogo.png" ImageAlign="Middle"/>
     <asp:Repeater ID="ModelRepeater" runat="server">
         <ItemTemplate>
+
+
     <div class="jumbotron" id="jumbo">
         <h1><%#Eval("name") %></h1>
         <h1><asp:Image ID="firstimage" runat="server" Height="200px" Width="250px" ImageUrl='<%# Eval("imageUrl") %>' /></h1>

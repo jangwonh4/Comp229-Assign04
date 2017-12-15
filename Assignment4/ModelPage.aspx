@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ModelPage.aspx.cs" Inherits="Assignment4.ModelPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
                        
-   
-        <table class="nav-justified">
+   <link rel="stylesheet" type="text/css" href="Content/PageCss.css"/>
+        <table class="nav-justified" id="tab">
             <tr>
                 <td colspan="2" class="text-center">
                                  <asp:Image ID="ImageGame" runat="server" CssClass="img-thumbnail" Height="294px" Width="344px" />

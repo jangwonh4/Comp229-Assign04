@@ -47,14 +47,30 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/"><asp:Image ID="BrandLogo" runat="server" 
-           ImageUrl="Asset/SmallLogo.png" ImageAlign="Middle"/></a>
+                    <a class="navbar-brand" runat="server" href="~/">Wrath of Kings</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/default.aspx">Home</a></li>
                         
-                    </ul>                    
+                    </ul> 
+                    
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Register">Register</a></li>
+                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li>
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                </li>
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>                   
                 </div>
             </div>
         </div>
@@ -62,9 +78,10 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - 300932496 Mingi Jang Assignment 4</p>
-            </footer>
+            <div class="container-fluid">
+            <div class="row text-center">
+                <p><a href="/Default.aspx">2017. WraithGods Game</a></p>
+            </div>
         </div>
     </form>
 </body>
