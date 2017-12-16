@@ -7,9 +7,9 @@
                 <div class="alert alert-warning" style="text-align: center">
                     <strong>Updating is completed.</strong>
                 </div>
-                <asp:TextBox CssClass="form-control" placeholder="*example@abc.com*" ID="TextBoxNameEmail" runat="server"></asp:TextBox>
+                <asp:TextBox CssClass="form-control" placeholder="*example@abc.com*" ID="TextBoxNameEmail" runat="server" Width="516px"></asp:TextBox>
                 <br />
-                <asp:TextBox CssClass="form-control" placeholder="*Client Name*" ID="TextBoxEmail" runat="server"></asp:TextBox>
+                <asp:TextBox CssClass="form-control" placeholder="*Client Name*" ID="TextBoxEmail" runat="server" Width="518px"></asp:TextBox>
                 <asp:Button ID="EmailButton" CssClass="btn btn-lg btn-default" runat="server" Text="Email updated file to client"  OnClick="EmailButton_Click"  />
             </div>
             

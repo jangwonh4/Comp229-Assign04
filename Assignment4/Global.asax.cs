@@ -10,18 +10,23 @@ using Newtonsoft.Json;
 using System.IO;
 using System.Net.Mail;
 using Assignment4.Models;
-
+using Newtonsoft.Json.Linq;
 
 namespace Assignment4
 {
     public class Global : HttpApplication
     {
-        public static List<Model> Models;
+        public static List<Model> Models { get; set; }
+
+        
 
         public const string ModelsJsonFilePath = "~/json/Assign04.json";
         public const string ModelsNewJsonFilePath = "~/json/NewAssign04.json";
 
-
+        public void Add(Model newchar)
+        {
+            Models.Add(newchar);
+        }
 
         void Application_Start(object sender, EventArgs e)
         {
@@ -90,9 +95,27 @@ namespace Assignment4
             }
             catch (Exception ex)
             {
-
+                //kkk
             }
         }
-        
+
+        public void Read(string file)
+        {
+            using (StreamReader reader = File.OpenText(System.Web.HttpContext.Current.Server.MapPath(file)))
+            {
+                JToken ton = JToken.ReadFrom(new JsonTextReader(reader));
+                Models = JsonConvert.DeserializeObject<List<Model>>(ton.ToString());
+            }
+        }
+
+        public void Write(string file)
+        {
+            var Json = JsonConvert.SerializeObject(Models, Formatting.Indented);
+            using (StreamWriter outputFile = new StreamWriter(System.Web.HttpContext.Current.Server.MapPath(file)))
+            {
+                outputFile.WriteLine(Json);
+            }
+        }
+
     }
 }
