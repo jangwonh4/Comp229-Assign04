@@ -14,10 +14,12 @@ namespace Assignment4
     public partial class ModelPage : System.Web.UI.Page
     {
         private Model _Model;
+        protected string Name;
+        protected string Faction;
         protected void Page_Load(object sender, EventArgs e)
         {
-            var Name = Request.QueryString["name"];
-            var Faction = Request.QueryString["faction"];
+            Name = Request.QueryString["name"];
+            Faction = Request.QueryString["faction"];
 
             if (string.IsNullOrEmpty(Name))
             {
@@ -43,6 +45,15 @@ namespace Assignment4
             txtSize.Enabled = true;
             
         }
+        protected void EmailButton_Click(object sender, EventArgs e)
+        {
+            string emailAddress = TextBoxEmail.Text;
+            string emailName = TextBoxNameEmail.Text;
+
+            Global.EmailJsonFile(emailAddress, emailName);
+            Response.Redirect("Default.aspx");
+        }
+
 
 
         private void UpdateAllModels()
@@ -52,6 +63,12 @@ namespace Assignment4
             _Model.faction = txtFaction.Text;
             _Model._base = int.Parse(txtBase.Text);
             _Model.size = int.Parse(txtSize.Text);
+            Global.UpdateNewJsonFile();
+            bool returnVal = true;
+            if (returnVal)
+            {
+                EmailContainer.Visible = true;
+            }
         }
         protected void Save_Click(object sender, EventArgs e)
         {
@@ -69,6 +86,13 @@ namespace Assignment4
             UpdateAllModels();
             
         }
+        protected void Delete_Click(object sender, EventArgs e)
+        {
+            //remove based on vname and vfaction          
+            Global.Models.RemoveAll(tModel => tModel.name == Name && tModel.faction == Faction);
+            Response.Redirect("~/Default.aspx");
+        }
+
         private void Bind()
         {
             ImageGame.ImageUrl = _Model.imageUrl;

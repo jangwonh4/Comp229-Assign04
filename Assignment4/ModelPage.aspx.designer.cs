@@ -13,6 +13,42 @@ namespace Assignment4 {
     public partial class ModelPage {
         
         /// <summary>
+        /// EmailContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl EmailContainer;
+        
+        /// <summary>
+        /// TextBoxNameEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxNameEmail;
+        
+        /// <summary>
+        /// TextBoxEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxEmail;
+        
+        /// <summary>
+        /// EmailButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button EmailButton;
+        
+        /// <summary>
         /// ImageGame control.
         /// </summary>
         /// <remarks>
@@ -20,6 +56,15 @@ namespace Assignment4 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image ImageGame;
+        
+        /// <summary>
+        /// action control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater action;
         
         /// <summary>
         /// txtName control.
@@ -157,12 +202,12 @@ namespace Assignment4 {
         protected global::System.Web.UI.WebControls.Button Save;
         
         /// <summary>
-        /// action control.
+        /// Delete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater action;
+        protected global::System.Web.UI.WebControls.Button Delete;
     }
 }

@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Newtonsoft.Json;
 
 namespace Assignment4.Models
 {
     public class Model
     {
+        [JsonProperty("name")]
         public string name { get; set; }
         public string faction { get; set; }
         public int rank { get; set; }

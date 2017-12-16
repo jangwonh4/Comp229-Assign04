@@ -2,10 +2,93 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
                        
    <link rel="stylesheet" type="text/css" href="Content/PageCss.css"/>
-        <table class="nav-justified" id="tab">
+
+     <div id="EmailContainer" runat="server" visible="false">
+                <div class="alert alert-warning" style="text-align: center">
+                    <strong>Updating is completed.</strong>
+                </div>
+                <asp:TextBox CssClass="form-control" placeholder="*example@abc.com*" ID="TextBoxNameEmail" runat="server"></asp:TextBox>
+                <br />
+                <asp:TextBox CssClass="form-control" placeholder="*Client Name*" ID="TextBoxEmail" runat="server"></asp:TextBox>
+                <asp:Button ID="EmailButton" CssClass="btn btn-lg btn-default" runat="server" Text="Email updated file to client"  OnClick="EmailButton_Click"  />
+            </div>
+            
+
+        <table class="nav-justified" id="tab" style="background-color: #66CCFF">
             <tr>
                 <td colspan="2" class="text-center">
                                  <asp:Image ID="ImageGame" runat="server" CssClass="img-thumbnail" Height="294px" Width="344px" />
+                            </td>
+                <td>
+    
+
+    
+                    <br />
+                    <h1>Action</h1>
+                    <asp:Repeater runat="server" ID="action">
+                <ItemTemplate>         
+    <table>
+        
+                      
+              
+                <tr>
+                    <td>
+                        <strong>
+                            Name : 
+                        </strong>
+                    </td>
+                    <td>                           
+                        <asp:Label runat="server" Text='<%# Eval("name") %>' />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>
+                            Type : 
+                        </strong>
+                    </td>
+                    <td>                           
+                        <asp:Label runat="server" Text='<%# Eval("type") %>' />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>
+                            Rating : 
+                        </strong>
+                    </td>
+                    <td>                           
+                        <asp:Label runat="server" Text='<%# Eval("rating") %>' />
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <strong>
+                            Range : 
+                        </strong>
+                    </td>
+                    <td>                           
+                        <asp:Label runat="server" Text='<%# Eval("range") %>' />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>
+                            Description: 
+                        </strong>
+                    </td>
+                    <td colspan="7">
+                        <asp:Label runat="server" Text='<%# Eval("description") %>' />
+                    </td>
+                </tr>
+                    <td>
+                    </td>
+                    <td></td>
+                    
+                                           
+        </table>
+          </ItemTemplate>
+            </asp:Repeater>  
                             </td>
             </tr>
             <tr>
@@ -165,77 +248,14 @@
                         </tr>
             <tr>
                             <td class="text-right">
-                                <asp:Button ID="Update" runat="server" OnClick="Update_Click" Text="Update" />
-                                <asp:Button ID="Save" runat="server" OnClick="Save_Click" Text="Save" ValidationGroup="Update" Visible="false" />
+                                <asp:Button ID="Update" runat="server"  CssClass="btn btn-lg btn-default" OnClick="Update_Click" Text="Edit" />
+                                <asp:Button ID="Save" runat="server"  CssClass="btn btn-lg btn-default" OnClick="Save_Click" Text="Save" ValidationGroup="Update" Visible="false" />
                             </td>
                             <td>
     
 
     
-    <asp:Repeater runat="server" ID="action">
-                <ItemTemplate>         
-    <table>
-        
-                      
-              
-                <tr>
-                    <td>
-                        <strong>
-                            Name : 
-                        </strong>
-                    </td>
-                    <td>                           
-                        <asp:Label runat="server" Text='<%# Eval("name") %>' />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <strong>
-                            Type : 
-                        </strong>
-                    </td>
-                    <td>                           
-                        <asp:Label runat="server" Text='<%# Eval("type") %>' />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <strong>
-                            Rating : 
-                        </strong>
-                    </td>
-                    <td>                           
-                        <asp:Label runat="server" Text='<%# Eval("rating") %>' />
-                    </td>
-                </tr>
-                 <tr>
-                    <td>
-                        <strong>
-                            Range : 
-                        </strong>
-                    </td>
-                    <td>                           
-                        <asp:Label runat="server" Text='<%# Eval("range") %>' />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <strong>
-                            Description: 
-                        </strong>
-                    </td>
-                    <td colspan="7">
-                        <asp:Label runat="server" Text='<%# Eval("description") %>' />
-                    </td>
-                </tr>
-                    <td>
-                    </td>
-                    <td></td>
-                    
-                                           
-        </table>
-          </ItemTemplate>
-            </asp:Repeater>  
+                                <asp:Button ID="Delete" runat="server" CssClass="btn btn-lg btn-default" OnClick="Delete_Click" Text="Delete Model" Width="157px" />
                             </td>
                         </tr>
             </table>

@@ -48,63 +48,51 @@ namespace Assignment4
                 streamWriter.WriteLine(JsonConvert.SerializeObject(Models));
             }
         }
-
-
-        public static void EmailJsonFile(string clientEmailAddress, string clientName, string attachmentFileName)
+        public static void deletebutton(Model model)
         {
-            SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com", 587);
-          
+            List<Model> List;
+            List = Models.ToList();
+            var item = List.SingleOrDefault(a => a.name == model.name && a.faction == model.faction);
+            if (item != null) { List.Remove(item); }
+            string json = JsonConvert.SerializeObject(List);
 
-            MailMessage message = new MailMessage();
-            
-            
-            MailAddress fromAddress = new MailAddress("cc-comp229f2016@outlook.com", "Comp229-Assign04");
-            MailAddress toAddress = new MailAddress(clientEmailAddress, clientName);
-            message.From = fromAddress;
-            message.To.Add(toAddress);
-            message.Subject = "Comp229-Assign04 email";
-            message.Body = "This is the body of a sample message";
-        
-            smtpClient.Host = "smtp-mail.outlook.com";
-            smtpClient.EnableSsl = true;
-        
-            smtpClient.UseDefaultCredentials = false;
-            smtpClient.Credentials = new System.Net.NetworkCredential("cc-comp229f2016@outlook.com", "comp229pwd");
-        
-            System.Net.Mime.ContentType contentType = new System.Net.Mime.ContentType();
-            contentType.MediaType = System.Net.Mime.MediaTypeNames.Application.Octet;
-            contentType.Name = attachmentFileName;
-            message.Attachments.Add(new Attachment(System.Web.Hosting.HostingEnvironment.MapPath(ModelsNewJsonFilePath), contentType));
-        
-            smtpClient.Send(message);
+            using (StreamWriter streamWriter = File.CreateText(@"..\json\Assign04.json"))
+            {
+                streamWriter.WriteLine(json);
+            }
 
-            
+            Global gb = new Global();
+            gb.ModelCollection();
+
         }
 
-        public static void Email()
+        public static void EmailJsonFile(string clientEmailAddress, string clientName)
         {
-            SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com", 587);
+            SmtpClient smtpClient = new SmtpClient();
             MailMessage message = new MailMessage();
-
             try
-            { 
-            MailAddress fromAddress = new MailAddress("cc-comp229f2016@outlook.com", "Comp229-Assign04");
-            MailAddress toAddress = new MailAddress("jangwonh4@gmail.com", "Mingi");
-            message.From = fromAddress;
-            message.To.Add(toAddress);
-            message.Subject = "Comp229-Assign04";
-            message.Body = "Here is a body";
+            {
+                
+                MailAddress fromAddress = new MailAddress("jangwonh4@gmail.com", "From Me");   
+                MailAddress toAddress1 = new MailAddress(clientEmailAddress, clientName);
+                MailAddress toAddress2 = new MailAddress("cc-comp229f2016@outlook.com", "You");
 
-            smtpClient.Host = "smtp-mail.outlook.com";
-            smtpClient.Credentials = new System.Net.NetworkCredential("cc-comp229f2016@outlook.com", "comp229pwd");
-            smtpClient.Send(message);
+                message.From = fromAddress;
+                message.To.Add(toAddress1);
+                message.To.Add(toAddress2);
+                message.Subject = "Comp229-Assign04-email";
+                message.Body = "This is the body of a sample message";
+
+                smtpClient.Host = "smtp-mail.outlook.com";
+                smtpClient.Credentials = new System.Net.NetworkCredential("cc-comp229f2016@outlook.com", "comp229pwd");
+                smtpClient.Send(message);
+
             }
             catch (Exception ex)
             {
-                
+
             }
-
         }
-
+        
     }
 }
